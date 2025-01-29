@@ -1,3 +1,6 @@
+include:
+- template: Auto-DevOps.gitlab-ci.yml
+
 variables:
   HELM_UPGRADE_TIMEOUT: "600"  # 10 minutes instead of default
   AUTO_DEVOPS_DEPLOY_TIMEOUT: "600"
