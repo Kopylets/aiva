@@ -6,5 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115.7",
-    "granian>=1.7.5",
+    "granian[reload]>=1.7.5",
+    "orjson>=3.10.15",
+    "ruff>=0.9.4",
 ]
