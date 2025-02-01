@@ -1,0 +1,3 @@
+[comment_code_suggest_prompt]
+user="""Say this: '{what_to_say}'
+"""
