@@ -1,3 +1,3 @@
-from .gitlab.router import gitlab_router
+from .gitlab import gitlab_router
 
 __all__ = ["gitlab_router"]

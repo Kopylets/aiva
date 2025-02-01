@@ -25,15 +25,27 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
+# ===============================
+#     Application settings
+# ===============================
+ENV GENERAL_APP_MODE=PROD
+
+# LLM settings
+ENV LLM_TEMPERATURE=0
+
+# Logger settings
+ENV LOG_LEVEL=20
+ENV LOG_NAME=AivaLogger
+
 # To resolve python imports
-ENV PYTHONPATH="src"
+ENV PYTHONPATH=src
+# ===============================
+# ===============================
 
 # Reset the entrypoint, don't invoke `uv`
 ENTRYPOINT []
 
 EXPOSE 80
 
-# Run the FastAPI application by default
-# Uses `fastapi dev` to enable hot-reloading when the `watch` sync occurs
-# Uses `--host 0.0.0.0` to allow access from outside the container
+# Run the FastAPI application
 CMD ["granian", "--interface", "asgi", "src.main:app", "--host", "0.0.0.0", "--port", "80"]

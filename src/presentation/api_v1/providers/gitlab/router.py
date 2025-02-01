@@ -1,13 +1,14 @@
-from pprint import pprint
-from typing import Annotated, Any
+from typing import Annotated
 
 from fastapi import APIRouter, Response, BackgroundTasks, status, Depends
 
-from application.services.code_suggest import (
+from application.services.comment_code_suggest import (
     BaseCodeSuggestService,
     get_code_suggest_service_gitlab_provider,
 )
 from .dependencies import parse_gitlab_request
+from .schemas import BaseGitlabEvent
+from .schemas import CommentOnCodeSnippetEvent
 
 gitlab_router = APIRouter(prefix="/gitlab", tags=["Gitlab"])
 
@@ -15,11 +16,9 @@ gitlab_router = APIRouter(prefix="/gitlab", tags=["Gitlab"])
 @gitlab_router.post("/webhook", description="Accepts a webhooks from gitlab")
 async def gitlab_webhook(
     background_tasks: BackgroundTasks,
-    request: Annotated[Any, Depends(parse_gitlab_request)],
-    code_suggest_service: Annotated[
-        BaseCodeSuggestService, Depends(get_code_suggest_service_gitlab_provider)
-    ],
+    gitlab_event: Annotated[BaseGitlabEvent, Depends(parse_gitlab_request)],
+    code_suggest_service: Annotated[BaseCodeSuggestService, Depends(get_code_suggest_service_gitlab_provider)],
 ) -> Response:
-    pprint(request)
-    background_tasks.add_task(code_suggest_service.suggest_code, comment=str(request))
+    if isinstance(gitlab_event, CommentOnCodeSnippetEvent):
+        background_tasks.add_task(code_suggest_service.suggest_code, comment_on_code_snippet=gitlab_event)
     return Response(status_code=status.HTTP_200_OK)
