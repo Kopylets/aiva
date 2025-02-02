@@ -8,7 +8,7 @@ from application.vcs_providers import (
     get_bitbucket_vcs_provider,
     get_gitlab_vcs_provider,
 )
-from application.llm import get_gigachat_llm, get_fake_llm
+from application.llm import get_gigachat_llm
 
 from .base import BaseCodeSuggestService
 from .code_suggest_service import CodeSuggestService

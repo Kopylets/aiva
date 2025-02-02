@@ -21,4 +21,4 @@ async def gitlab_webhook(
 ) -> Response:
     if isinstance(gitlab_event, CommentOnCodeSnippetEvent):
         background_tasks.add_task(code_suggest_service.suggest_code, comment_on_code_snippet=gitlab_event)
-    return Response(status_code=status.HTTP_200_OK)
+    return Response(status_code=status.HTTP_200_OK, content='OK')

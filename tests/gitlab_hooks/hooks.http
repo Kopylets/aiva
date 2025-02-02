@@ -82,7 +82,7 @@ Content-Type: application/json
 }
 
 ### send-staging
-POST https://documate-aiva-staging.aiva.documate.ru/api/v1/gitlab/webhook
+POST https://aiva-staging.documate.ru/api/v1/gitlab/webhook
 Content-Type: application/json
 
 {
