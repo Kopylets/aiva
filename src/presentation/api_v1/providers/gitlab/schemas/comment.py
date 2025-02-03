@@ -1,5 +1,5 @@
 """Comment Gitlab WebHooks Schemas"""
-
+from datetime import datetime
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -26,8 +26,8 @@ class CommentObjectAttributes(BaseModel):
     note: str
     noteable_type: Literal["Commit", "MergeRequest", "Issue", "Snippet"]
     author_id: int
-    created_at: GitlabDateTime
-    updated_at: GitlabDateTime
+    created_at: GitlabDateTime | datetime
+    updated_at: GitlabDateTime | datetime
     project_id: int
     attachment: None
     line_code: str | None
@@ -53,8 +53,8 @@ class CommentSnippet(BaseModel):
     content: str
     author_id: int
     project_id: int
-    created_at: GitlabDateTime
-    updated_at: GitlabDateTime
+    created_at: GitlabDateTime | datetime
+    updated_at: GitlabDateTime | datetime
     file_name: str
     type: Literal["ProjectSnippet"]
     visibility_level: int
