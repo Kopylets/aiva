@@ -17,9 +17,7 @@ class CodeSuggestService(BaseCodeSuggestService):
     llm: BaseChatModel
 
     async def suggest_code(self, comment_on_code_snippet: CommentOnCodeSnippetEvent) -> None:
-        logger.info("Suggesting code..", comment_on_code_snippet=comment_on_code_snippet)
         code_suggestion = await self._suggest_code(comment_on_code_snippet)
-        logger.info("Suggestion", code_suggestion=code_suggestion)
 
     async def _suggest_code(self, comment_on_code_snippet: CommentOnCodeSnippetEvent) -> str:
         # Gleb, your code is here! Here is an example of how to call model
@@ -32,4 +30,6 @@ class CodeSuggestService(BaseCodeSuggestService):
 
         # Invoke model, or maybe use `with_structured_output` or smth...
         code_suggestion = await self.llm.ainvoke(copy_prompt.messages)
+        logger.info("LLM response", response=code_suggestion)
+
         return code_suggestion.content

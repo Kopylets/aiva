@@ -20,7 +20,7 @@ class GitlabUser(BaseModel):
 
 
 class GitlabProject(BaseModel):
-    project_id: int = (Field(alias="id"),)
+    project_id: int = Field(alias="id")
     name: str
     description: str
     web_url: str

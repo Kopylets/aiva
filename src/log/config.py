@@ -1,3 +1,4 @@
+import logfire
 import orjson
 import structlog
 from structlog import BytesLoggerFactory, WriteLoggerFactory
@@ -23,6 +24,13 @@ def get_time_stamper() -> structlog.processors.TimeStamper:
     )
 
 
+logfire.configure(
+    token=settings.logfire_settings.token.get_secret_value(),
+    console=settings.logfire_settings.console,
+    service_name=settings.logfire_settings.service_name,
+    send_to_logfire=settings.logfire_settings.send_to_logfire
+)
+
 structlog.configure(
     cache_logger_on_first_use=True,
     wrapper_class=structlog.make_filtering_bound_logger(settings.logger_settings.level),
@@ -31,6 +39,7 @@ structlog.configure(
         structlog.processors.add_log_level,
         structlog.processors.format_exc_info,
         get_time_stamper(),
+        logfire.StructlogProcessor(),
         get_renderer(),
     ],
     logger_factory=get_logger_factory(),
