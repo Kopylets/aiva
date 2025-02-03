@@ -37,6 +37,11 @@ ENV LLM_TEMPERATURE=0
 ENV LOG_LEVEL=20
 ENV LOG_NAME=AivaLogger
 
+# Logfire settings
+ENV LOGFIRE_CONSOLE=false
+ENV LOGFIRE_SERVICE_NAME=AivaFastAPI
+ENV LOGFIRE_SEND_TO_LOGFIRE=true
+
 # To resolve python imports
 ENV PYTHONPATH=src
 # ===============================

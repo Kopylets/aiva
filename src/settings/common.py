@@ -16,6 +16,15 @@ class LoggerSettings(BaseSettings):
     level: int
 
 
+class LogfireSettings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", env_prefix="logfire_", extra="ignore")
+
+    token: SecretStr
+    console: bool
+    service_name: str
+    send_to_logfire: bool
+
+
 class GeneralSettings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_prefix="general_", extra="ignore")
 
