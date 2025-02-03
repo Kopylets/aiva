@@ -31,7 +31,7 @@ class CommentObjectAttributes(BaseModel):
     project_id: int
     attachment: None
     line_code: str | None
-    commit_id: str
+    commit_id: str | None
     noteable_id: int
     system: bool
     st_diff: CommentStDiff | None
