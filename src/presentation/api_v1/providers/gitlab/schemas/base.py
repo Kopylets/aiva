@@ -22,7 +22,7 @@ class GitlabUser(BaseModel):
 class GitlabProject(BaseModel):
     project_id: int = Field(alias="id")
     name: str
-    description: str
+    description: str | None
     web_url: str
     avatar_url: str | None
     git_ssh_url: str
@@ -40,7 +40,7 @@ class GitlabProject(BaseModel):
 class GitlabRepository(BaseModel):
     name: str
     url: str
-    description: str
+    description: str | None
     homepage: str
 
 
