@@ -6,66 +6,220 @@ Content-Type: application/json
   "object_kind": "note",
   "event_type": "note",
   "user": {
-    "id": 1,
-    "name": "Administrator",
-    "username": "root",
-    "avatar_url": "http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon",
-    "email": "admin@example.com"
+    "id": 21634256,
+    "name": "Alexander Bush",
+    "username": "bushanka",
+    "avatar_url": "https://secure.gravatar.com/avatar/8c1e94ba45f0ccf9c0755a2aa05386d4fb43244778a4e07f1c8ad4d55f790dfb?s=80&d=identicon",
+    "email": "[REDACTED]"
   },
-  "project_id": 5,
-  "project":{
-    "id": 5,
-    "name":"Gitlab Test",
-    "description":"Aut reprehenderit ut est.",
-    "web_url":"http://example.com/gitlab-org/gitlab-test",
-    "avatar_url":null,
-    "git_ssh_url":"git@example.com:gitlab-org/gitlab-test.git",
-    "git_http_url":"http://example.com/gitlab-org/gitlab-test.git",
-    "namespace":"Gitlab Org",
-    "visibility_level":10,
-    "path_with_namespace":"gitlab-org/gitlab-test",
-    "default_branch":"master",
-    "homepage":"http://example.com/gitlab-org/gitlab-test",
-    "url":"http://example.com/gitlab-org/gitlab-test.git",
-    "ssh_url":"git@example.com:gitlab-org/gitlab-test.git",
-    "http_url":"http://example.com/gitlab-org/gitlab-test.git"
-  },
-  "repository":{
-    "name":"Gitlab Test",
-    "url":"http://example.com/gitlab-org/gitlab-test.git",
-    "description":"Aut reprehenderit ut est.",
-    "homepage":"http://example.com/gitlab-org/gitlab-test"
+  "project_id": 66605232,
+  "project": {
+    "id": 66605232,
+    "name": "aiva",
+    "description": null,
+    "web_url": "https://gitlab.com/documate/aiva",
+    "avatar_url": null,
+    "git_ssh_url": "git@gitlab.com:documate/aiva.git",
+    "git_http_url": "https://gitlab.com/documate/aiva.git",
+    "namespace": "documate",
+    "visibility_level": 0,
+    "path_with_namespace": "documate/aiva",
+    "default_branch": "main",
+    "ci_config_path": "",
+    "homepage": "https://gitlab.com/documate/aiva",
+    "url": "git@gitlab.com:documate/aiva.git",
+    "ssh_url": "git@gitlab.com:documate/aiva.git",
+    "http_url": "https://gitlab.com/documate/aiva.git"
   },
   "object_attributes": {
-    "id": 1245,
-    "note": "Is this snippet doing what it's supposed to be doing?",
-    "noteable_type": "Snippet",
-    "author_id": 1,
-    "created_at": "2025-02-03T15:01:51.595Z",
-    "updated_at": "2025-02-03T15:01:51.595Z",
-    "project_id": 5,
     "attachment": null,
-    "line_code": null,
-    "commit_id": "",
-    "noteable_id": 53,
-    "system": false,
+    "author_id": 21634256,
+    "change_position": {
+      "base_sha": null,
+      "start_sha": null,
+      "head_sha": null,
+      "old_path": null,
+      "new_path": null,
+      "position_type": "text",
+      "old_line": null,
+      "new_line": null,
+      "line_range": null
+    },
+    "commit_id": null,
+    "created_at": "2025-02-03T18:58:02.150Z",
+    "discussion_id": "748408b5556f3e1a48643f2d3c1d5978f1299662",
+    "id": 2328809569,
+    "line_code": "626af34e8204774ea46e20955936146dedc828eb_0_18",
+    "note": "use default logger instead of prints",
+    "noteable_id": 359669442,
+    "noteable_type": "MergeRequest",
+    "original_position": {
+      "base_sha": "05021698974760b875d46f94aa49c5ed1016ede1",
+      "start_sha": "05021698974760b875d46f94aa49c5ed1016ede1",
+      "head_sha": "fe1ac3aebcef24869f0841faf76d1325e352e0e7",
+      "old_path": "tests/conftest.py",
+      "new_path": "tests/conftest.py",
+      "position_type": "text",
+      "old_line": null,
+      "new_line": 18,
+      "line_range": {
+        "start": {
+          "line_code": "626af34e8204774ea46e20955936146dedc828eb_0_18",
+          "type": "new",
+          "old_line": null,
+          "new_line": 18
+        },
+        "end": {
+          "line_code": "626af34e8204774ea46e20955936146dedc828eb_0_18",
+          "type": "new",
+          "old_line": null,
+          "new_line": 18
+        }
+      }
+    },
+    "position": {
+      "base_sha": "b4253f0ee3fe79f38c37427a7744397cccb1c632",
+      "start_sha": "05021698974760b875d46f94aa49c5ed1016ede1",
+      "head_sha": "b081020193e10bf25b5185957c24cbd67cc6bae7",
+      "old_path": "tests/conftest.py",
+      "new_path": "tests/conftest.py",
+      "position_type": "text",
+      "old_line": null,
+      "new_line": 18,
+      "line_range": {
+        "start": {
+          "line_code": "626af34e8204774ea46e20955936146dedc828eb_0_18",
+          "type": "new",
+          "old_line": null,
+          "new_line": 18
+        },
+        "end": {
+          "line_code": "626af34e8204774ea46e20955936146dedc828eb_0_18",
+          "type": "new",
+          "old_line": null,
+          "new_line": 18
+        }
+      }
+    },
+    "project_id": 66605232,
+    "resolved_at": null,
+    "resolved_by_id": null,
+    "resolved_by_push": null,
     "st_diff": null,
-    "action": "create",
-    "url": "http://example.com/gitlab-org/gitlab-test/-/snippets/53#note_1245"
+    "system": false,
+    "type": "DiffNote",
+    "updated_at": "2025-02-03T18:58:02.150Z",
+    "updated_by_id": null,
+    "description": "use default logger instead of prints",
+    "url": "https://gitlab.com/documate/aiva/-/merge_requests/4#note_2328809569",
+    "action": "create"
   },
-  "snippet": {
-    "id": 53,
-    "title": "test",
-    "description": "A snippet description.",
-    "content": "puts 'Hello world'",
-    "author_id": 1,
-    "project_id": 5,
-    "created_at": "2025-02-03T15:01:51.595Z",
-    "updated_at": "2025-02-03T15:01:51.595Z",
-    "file_name": "test.rb",
-    "type": "ProjectSnippet",
-    "visibility_level": 0,
-    "url": "http://example.com/gitlab-org/gitlab-test/-/snippets/53"
+  "repository": {
+    "name": "aiva",
+    "url": "git@gitlab.com:documate/aiva.git",
+    "description": null,
+    "homepage": "https://gitlab.com/documate/aiva"
+  },
+  "merge_request": {
+    "assignee_id": null,
+    "author_id": 21634256,
+    "created_at": "2025-02-03T18:57:07.165Z",
+    "description": "mock description lalala",
+    "draft": false,
+    "head_pipeline_id": 1653811624,
+    "id": 359669442,
+    "iid": 4,
+    "last_edited_at": null,
+    "last_edited_by_id": null,
+    "merge_commit_sha": null,
+    "merge_error": null,
+    "merge_params": {
+      "force_remove_source_branch": "1"
+    },
+    "merge_status": "can_be_merged",
+    "merge_user_id": null,
+    "merge_when_pipeline_succeeds": false,
+    "milestone_id": null,
+    "source_branch": "test/webhook",
+    "source_project_id": 66605232,
+    "state_id": 1,
+    "target_branch": "main",
+    "target_project_id": 66605232,
+    "time_estimate": 0,
+    "title": "feat: add some tests to check gitlab webhook on open mr",
+    "updated_at": "2025-02-03T18:57:11.310Z",
+    "updated_by_id": null,
+    "prepared_at": "2025-02-03T18:57:11.259Z",
+    "assignee_ids": [
+
+    ],
+    "blocking_discussions_resolved": true,
+    "detailed_merge_status": "mergeable",
+    "first_contribution": false,
+    "human_time_change": null,
+    "human_time_estimate": null,
+    "human_total_time_spent": null,
+    "labels": [
+
+    ],
+    "last_commit": {
+      "id": "b081020193e10bf25b5185957c24cbd67cc6bae7",
+      "message": "feat: add some tests to check gitlab webhook on open mr\n",
+      "title": "feat: add some tests to check gitlab webhook on open mr",
+      "timestamp": "2025-02-03T21:56:16+03:00",
+      "url": "https://gitlab.com/documate/aiva/-/commit/b081020193e10bf25b5185957c24cbd67cc6bae7",
+      "author": {
+        "name": "bushanka",
+        "email": "[REDACTED]"
+      }
+    },
+    "reviewer_ids": [
+
+    ],
+    "source": {
+      "id": 66605232,
+      "name": "aiva",
+      "description": null,
+      "web_url": "https://gitlab.com/documate/aiva",
+      "avatar_url": null,
+      "git_ssh_url": "git@gitlab.com:documate/aiva.git",
+      "git_http_url": "https://gitlab.com/documate/aiva.git",
+      "namespace": "documate",
+      "visibility_level": 0,
+      "path_with_namespace": "documate/aiva",
+      "default_branch": "main",
+      "ci_config_path": "",
+      "homepage": "https://gitlab.com/documate/aiva",
+      "url": "git@gitlab.com:documate/aiva.git",
+      "ssh_url": "git@gitlab.com:documate/aiva.git",
+      "http_url": "https://gitlab.com/documate/aiva.git"
+    },
+    "state": "opened",
+    "target": {
+      "id": 66605232,
+      "name": "aiva",
+      "description": null,
+      "web_url": "https://gitlab.com/documate/aiva",
+      "avatar_url": null,
+      "git_ssh_url": "git@gitlab.com:documate/aiva.git",
+      "git_http_url": "https://gitlab.com/documate/aiva.git",
+      "namespace": "documate",
+      "visibility_level": 0,
+      "path_with_namespace": "documate/aiva",
+      "default_branch": "main",
+      "ci_config_path": "",
+      "homepage": "https://gitlab.com/documate/aiva",
+      "url": "git@gitlab.com:documate/aiva.git",
+      "ssh_url": "git@gitlab.com:documate/aiva.git",
+      "http_url": "https://gitlab.com/documate/aiva.git"
+    },
+    "time_change": 0,
+    "total_time_spent": 0,
+    "url": "https://gitlab.com/documate/aiva/-/merge_requests/4",
+    "work_in_progress": false,
+    "approval_rules": [
+
+    ]
   }
 }
 
@@ -78,76 +232,5 @@ Content-Type: application/json
   "some_invalid_json": "123",
   "test": {
     "not valid": "hmm"
-  }
-}
-
-### send-staging
-POST https://aiva-staging.documate.ru/api/v1/gitlab/webhook
-Content-Type: application/json
-
-{
-  "object_kind": "note",
-  "event_type": "note",
-  "user": {
-    "id": 1,
-    "name": "Administrator",
-    "username": "root",
-    "avatar_url": "http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon",
-    "email": "admin@example.com"
-  },
-  "project_id": 5,
-  "project":{
-    "id": 5,
-    "name":"Gitlab Test",
-    "description":"Aut reprehenderit ut est.",
-    "web_url":"http://example.com/gitlab-org/gitlab-test",
-    "avatar_url":null,
-    "git_ssh_url":"git@example.com:gitlab-org/gitlab-test.git",
-    "git_http_url":"http://example.com/gitlab-org/gitlab-test.git",
-    "namespace":"Gitlab Org",
-    "visibility_level":10,
-    "path_with_namespace":"gitlab-org/gitlab-test",
-    "default_branch":"master",
-    "homepage":"http://example.com/gitlab-org/gitlab-test",
-    "url":"http://example.com/gitlab-org/gitlab-test.git",
-    "ssh_url":"git@example.com:gitlab-org/gitlab-test.git",
-    "http_url":"http://example.com/gitlab-org/gitlab-test.git"
-  },
-  "repository":{
-    "name":"Gitlab Test",
-    "url":"http://example.com/gitlab-org/gitlab-test.git",
-    "description":"Aut reprehenderit ut est.",
-    "homepage":"http://example.com/gitlab-org/gitlab-test"
-  },
-  "object_attributes": {
-    "id": 1245,
-    "note": "Is this snippet doing what it's supposed to be doing?",
-    "noteable_type": "Snippet",
-    "author_id": 1,
-    "created_at": "2025-02-03T15:01:51.595Z",
-    "updated_at": "2025-02-03T15:01:51.595Z",
-    "project_id": 5,
-    "attachment": null,
-    "line_code": null,
-    "commit_id": "",
-    "noteable_id": 53,
-    "system": false,
-    "st_diff": null,
-    "action": "create",
-    "url": "http://example.com/gitlab-org/gitlab-test/-/snippets/53#note_1245"
-  },
-  "snippet": {
-    "id": 53,
-    "title": "test",
-    "description": "A snippet description.",
-    "content": "puts 'Hello world'",
-    "author_id": 1,
-    "project_id": 5,
-    "created_at": "2025-02-03T15:01:51.595Z",
-    "updated_at": "2025-02-03T15:01:51.595Z",
-    "file_name": "test.rb",
-    "type": "ProjectSnippet",
-    "visibility_level": 0,
-    "url": "http://example.com/gitlab-org/gitlab-test/-/snippets/53"
   }
 }

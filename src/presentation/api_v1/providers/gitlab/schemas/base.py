@@ -31,6 +31,7 @@ class GitlabProject(BaseModel):
     visibility_level: int
     path_with_namespace: str
     default_branch: str
+    ci_config_path: str | None
     homepage: str
     url: str
     ssh_url: str

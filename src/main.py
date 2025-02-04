@@ -1,5 +1,5 @@
 import logfire
-from fastapi import FastAPI, Response, Request, status
+from fastapi import FastAPI, Response, status
 from presentation.api_v1 import api_v1
 
 from log import logger

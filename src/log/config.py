@@ -28,7 +28,7 @@ logfire.configure(
     token=settings.logfire_settings.token.get_secret_value(),
     console=settings.logfire_settings.console,
     service_name=settings.logfire_settings.service_name,
-    send_to_logfire=settings.logfire_settings.send_to_logfire
+    send_to_logfire=settings.logfire_settings.send_to_logfire,
 )
 
 structlog.configure(
