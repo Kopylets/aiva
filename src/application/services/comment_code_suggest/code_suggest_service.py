@@ -17,6 +17,8 @@ class CodeSuggestService(BaseCodeSuggestService):
     llm: BaseChatModel
 
     async def suggest_code(self, comment_on_mr_event: CommentOnMergeRequestGitlabEvent) -> None:
+        if "@aiva" not in comment_on_mr_event.object_attributes.note:
+            return
         code_snippet = await self.vcs_provider.get_code_snippet_from_path(
             project_path=comment_on_mr_event.project.path_with_namespace,
             file_path=comment_on_mr_event.object_attributes.position.new_path,

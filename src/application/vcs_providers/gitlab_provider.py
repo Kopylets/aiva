@@ -52,7 +52,6 @@ class GitlabProvider(BaseProvider):
             raise ValueError(f"File '{file_path}' not found in branch '{source_branch}'")
 
         # Extract the snippet based on lines' numbers
-        # Extract the snippet based on line numbers
         if start_line is not None and end_line is not None:
             # Validate line numbers
             if start_line < 1 or end_line > len(file_content) or start_line > end_line:
