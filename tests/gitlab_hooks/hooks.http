@@ -46,17 +46,17 @@ Content-Type: application/json
       "line_range": null
     },
     "commit_id": null,
-    "created_at": "2025-02-03T18:58:02.150Z",
-    "discussion_id": "748408b5556f3e1a48643f2d3c1d5978f1299662",
-    "id": 2328809569,
+    "created_at": "2025-02-04 15:55:58 UTC",
+    "discussion_id": "26f2d978d9f15327af2ecfc4cf9c11036f8eb4af",
+    "id": 2330541765,
     "line_code": "626af34e8204774ea46e20955936146dedc828eb_0_18",
-    "note": "use default logger instead of prints",
+    "note": "Write it more politely please.",
     "noteable_id": 359669442,
     "noteable_type": "MergeRequest",
     "original_position": {
-      "base_sha": "05021698974760b875d46f94aa49c5ed1016ede1",
-      "start_sha": "05021698974760b875d46f94aa49c5ed1016ede1",
-      "head_sha": "fe1ac3aebcef24869f0841faf76d1325e352e0e7",
+      "base_sha": "8ff544ac74b29d39f17ff32d547ac2cf53a96ca4",
+      "start_sha": "8ff544ac74b29d39f17ff32d547ac2cf53a96ca4",
+      "head_sha": "a4e54fc53e45dea2c25b257e2562649a559f89c3",
       "old_path": "tests/conftest.py",
       "new_path": "tests/conftest.py",
       "position_type": "text",
@@ -108,10 +108,10 @@ Content-Type: application/json
     "st_diff": null,
     "system": false,
     "type": "DiffNote",
-    "updated_at": "2025-02-03T18:58:02.150Z",
+    "updated_at": "2025-02-04 15:55:58 UTC",
     "updated_by_id": null,
-    "description": "use default logger instead of prints",
-    "url": "https://gitlab.com/documate/aiva/-/merge_requests/4#note_2328809569",
+    "description": "Write it more politely please.",
+    "url": "https://gitlab.com/documate/aiva/-/merge_requests/4#note_2330541765",
     "action": "create"
   },
   "repository": {
@@ -123,7 +123,7 @@ Content-Type: application/json
   "merge_request": {
     "assignee_id": null,
     "author_id": 21634256,
-    "created_at": "2025-02-03T18:57:07.165Z",
+    "created_at": "2025-02-03 18:57:07 UTC",
     "description": "mock description lalala",
     "draft": false,
     "head_pipeline_id": 1653811624,
@@ -147,9 +147,9 @@ Content-Type: application/json
     "target_project_id": 66605232,
     "time_estimate": 0,
     "title": "feat: add some tests to check gitlab webhook on open mr",
-    "updated_at": "2025-02-03T18:57:11.310Z",
+    "updated_at": "2025-02-04 15:55:58 UTC",
     "updated_by_id": null,
-    "prepared_at": "2025-02-03T18:57:11.259Z",
+    "prepared_at": "2025-02-03 18:57:11 UTC",
     "assignee_ids": [
 
     ],
@@ -222,7 +222,6 @@ Content-Type: application/json
     ]
   }
 }
-
 
 ### invalid-data
 POST http://127.0.0.1:8080/api/v1/gitlab/webhook
