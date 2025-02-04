@@ -6,7 +6,7 @@ from pydantic import ValidationError
 
 from log import logger
 from .schemas.base import BaseGitlabEvent
-from .schemas.comment import CommentGitlabEvent, CommentOnMergeRequestEvent
+from .schemas.comment import CommentGitlabEvent, CommentOnMergeRequestGitlabEvent
 
 JSON: TypeAlias = dict[str, "JSON"] | list["JSON"] | str | int | float | bool | None
 
@@ -38,7 +38,7 @@ async def parse_gitlab_request(
 
         # Comment on merge request
         if comment_event.object_attributes.noteable_type == "MergeRequest":
-            return CommentOnMergeRequestEvent.model_validate(json_request)
+            return CommentOnMergeRequestGitlabEvent.model_validate(json_request)
 
     # MergeRequest event
     elif gitlab_event.object_kind == "merge_request":

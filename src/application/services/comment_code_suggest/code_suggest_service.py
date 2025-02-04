@@ -4,9 +4,9 @@ from dataclasses import dataclass
 from langchain_core.language_models import BaseChatModel
 
 from log import logger
+from presentation.api_v1.providers.gitlab.schemas import CommentOnMergeRequestGitlabEvent
 from prompts import gigachat_prompts
 from application.vcs_providers import BaseProvider
-from presentation.api_v1.providers.gitlab.schemas import CommentOnMergeRequestEvent
 
 from .base import BaseCodeSuggestService
 
@@ -16,17 +16,26 @@ class CodeSuggestService(BaseCodeSuggestService):
     vcs_provider: BaseProvider
     llm: BaseChatModel
 
-    async def suggest_code(self, comment_on_mr_code_snippet: CommentOnMergeRequestEvent) -> None:
-        code_suggestion = await self._suggest_code(comment_on_mr_code_snippet)
+    async def suggest_code(self, comment_on_mr_event: CommentOnMergeRequestGitlabEvent) -> None:
+        code_snippet = await self.vcs_provider.get_code_snippet_from_path("123")
+        code_suggestion = await self._suggest_code(
+            user_comment=comment_on_mr_event.object_attributes.note,
+            code_snippet=code_snippet
+        )
+        await self.vcs_provider.publish_code_suggestion(
+            code_suggestion,
+            comment_on_mr_event.project.path_with_namespace,
+            comment_on_mr_event.object_attributes.discussion_id
+        )
 
-    async def _suggest_code(self, comment_on_mr_code_snippet: CommentOnMergeRequestEvent) -> str:
+    async def _suggest_code(self, user_comment: str, code_snippet: str) -> str:
         # Gleb, your code is here! Here is an example of how to call model
 
         # Copy prompt template
         copy_prompt = copy.deepcopy(gigachat_prompts.comment_code_suggest_prompt)
 
         # Change with your values
-        copy_prompt.user = copy_prompt.user.format(what_to_say=comment_on_mr_code_snippet.object_attributes.note)
+        copy_prompt.user = copy_prompt.user.format(user_comment=user_comment, code=code_snippet)
 
         # Invoke model, or maybe use `with_structured_output` or smth...
         code_suggestion = await self.llm.ainvoke(copy_prompt.messages)

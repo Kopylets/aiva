@@ -1,5 +1,5 @@
 from .base import BaseGitlabEvent
-from .comment import CommentOnMergeRequestEvent
+from .comment import CommentOnMergeRequestGitlabEvent
 from .mr import MergeRequestEvent
 
-__all__ = ["BaseGitlabEvent", "CommentOnMergeRequestEvent", "MergeRequestEvent"]
+__all__ = ["BaseGitlabEvent", "CommentOnMergeRequestGitlabEvent", "MergeRequestEvent"]

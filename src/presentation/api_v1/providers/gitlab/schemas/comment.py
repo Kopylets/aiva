@@ -155,5 +155,5 @@ class MergeRequest(BaseModel):
     approval_rules: list[Any] = Field(default_factory=list)
 
 
-class CommentOnMergeRequestEvent(CommentGitlabEvent):
+class CommentOnMergeRequestGitlabEvent(CommentGitlabEvent):
     merge_request: MergeRequest

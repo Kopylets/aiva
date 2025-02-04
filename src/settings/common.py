@@ -25,6 +25,13 @@ class LogfireSettings(BaseSettings):
     send_to_logfire: bool
 
 
+class GitLabSettings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", env_prefix="gitlab_", extra="ignore")
+
+    base_url: str
+    private_token: SecretStr
+
+
 class GeneralSettings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_prefix="general_", extra="ignore")
 

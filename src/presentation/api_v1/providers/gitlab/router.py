@@ -8,7 +8,7 @@ from application.services.comment_code_suggest import (
 )
 from .dependencies import parse_gitlab_request
 from .schemas import BaseGitlabEvent
-from .schemas import CommentOnMergeRequestEvent
+from .schemas import CommentOnMergeRequestGitlabEvent
 
 gitlab_router = APIRouter(prefix="/gitlab", tags=["Gitlab"])
 
@@ -19,6 +19,6 @@ async def gitlab_webhook(
     gitlab_event: Annotated[BaseGitlabEvent, Depends(parse_gitlab_request)],
     code_suggest_service: Annotated[BaseCodeSuggestService, Depends(get_code_suggest_service_gitlab_provider)],
 ) -> Response:
-    if isinstance(gitlab_event, CommentOnMergeRequestEvent):
-        background_tasks.add_task(code_suggest_service.suggest_code, comment_on_mr_code_snippet=gitlab_event)
+    if isinstance(gitlab_event, CommentOnMergeRequestGitlabEvent):
+        background_tasks.add_task(code_suggest_service.suggest_code, comment_on_mr_event=gitlab_event)
     return Response(status_code=status.HTTP_200_OK, content="OK")
