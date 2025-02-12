@@ -48,7 +48,7 @@ class CodeSuggestService(BaseCodeSuggestService):
         logger.info("LLM response", response=code_suggestion)
 
         new_line_char = '\n'
-        answer = "suggestion:-{original_code_len}+{code_suggestion_len}\n{code_suggestion}\n"
+        answer = "```suggestion:-{original_code_len}+{code_suggestion_len}\n{code_suggestion}\n```"
         answer = answer.format(
             original_code_len = len(code_snippet.split(new_line_char)), 
             code_suggestion_len = len(code_suggestion.split(new_line_char)), 
