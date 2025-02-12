@@ -5,7 +5,7 @@ from langchain_core.language_models import BaseChatModel
 
 from log import logger
 from presentation.api_v1.providers.gitlab.schemas import CommentOnMergeRequestGitlabEvent
-from graphs import get_code_suggestion_graph
+from application.services.graphs import get_code_suggestion_graph
 from application.vcs_providers import BaseProvider
 
 from .base import BaseCodeSuggestService
