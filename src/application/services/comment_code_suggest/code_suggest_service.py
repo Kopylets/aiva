@@ -47,4 +47,4 @@ class CodeSuggestService(BaseCodeSuggestService):
         code_suggestion = code_suggestion["result"]
         logger.info("LLM response", response=code_suggestion)
 
-        return code_suggestion
+        return code_suggestion.content
