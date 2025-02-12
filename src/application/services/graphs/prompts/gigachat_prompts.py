@@ -28,9 +28,10 @@ class BaseGigaChatPrompt(BaseModel):
 
 
 class GigaChatPrompts(BaseSettings):
-    base_prompt: BaseGigaChatPrompt
+    base_request: BaseGigaChatPrompt
     generate_code_request: BaseGigaChatPrompt
     validate_code_request: BaseGigaChatPrompt
+    refact_code_request: BaseGigaChatPrompt
 
     mr_summary_prompt: BaseGigaChatPrompt
 

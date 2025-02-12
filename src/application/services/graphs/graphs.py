@@ -1,5 +1,5 @@
 #TODO i don't like how it looks. I belive it is better to put this inside NodeProvider class as parameter
-from prompts import gigachat_prompts
+from .prompts import gigachat_prompts
 from log import logger
 
 from dataclasses import dataclass

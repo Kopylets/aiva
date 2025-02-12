@@ -40,7 +40,7 @@ def greet(name):
 *Expected Output:*
 ```python
 def greet(names):
-    """Return a list of greetings for each name in the input list."""
+    "Return a list of greetings for each name in the input list."
     if not isinstance(names, list):
         raise TypeError("Input must be a list of names.")
 
