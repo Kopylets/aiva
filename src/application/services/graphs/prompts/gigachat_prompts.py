@@ -28,7 +28,10 @@ class BaseGigaChatPrompt(BaseModel):
 
 
 class GigaChatPrompts(BaseSettings):
-    comment_code_suggest_prompt: BaseGigaChatPrompt
+    base_prompt: BaseGigaChatPrompt
+    generate_code_request: BaseGigaChatPrompt
+    validate_code_request: BaseGigaChatPrompt
+
     mr_summary_prompt: BaseGigaChatPrompt
 
     @classmethod
@@ -40,7 +43,7 @@ class GigaChatPrompts(BaseSettings):
                 [
                     base_path / prompt_path
                     for prompt_path in [
-                        Path("templates/comment_code_suggest_prompt.toml"),
+                        Path("templates/comment_code_suggest_prompts.toml"),
                         Path("templates/mr_summary_prompt.toml"),
                     ]
                 ],

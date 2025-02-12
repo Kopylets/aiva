@@ -5,7 +5,7 @@ from langchain_core.language_models import BaseChatModel
 
 from log import logger
 from presentation.api_v1.providers.gitlab.schemas import CommentOnMergeRequestGitlabEvent
-from prompts import gigachat_prompts
+from graphs import get_code_suggestion_graph
 from application.vcs_providers import BaseProvider
 
 from .base import BaseCodeSuggestService
@@ -38,16 +38,13 @@ class CodeSuggestService(BaseCodeSuggestService):
         )
 
     async def _suggest_code(self, user_comment: str, code_snippet: str) -> str:
-        # Gleb, your code is here! Here is an example of how to call model
+        code_suggestion_graph = get_code_suggestion_graph(llm=self.llm)
 
-        # Copy prompt template
-        copy_prompt = copy.deepcopy(gigachat_prompts.comment_code_suggest_prompt)
-
-        # Change with your values
-        copy_prompt.user = copy_prompt.user.format(user_comment=user_comment, code=code_snippet)
-
-        # Invoke model, or maybe use `with_structured_output` or smth...
-        code_suggestion = await self.llm.ainvoke(copy_prompt.messages)
+        code_suggestion = await code_suggestion_graph.ainvoke({
+            "code_snippet": code_snippet,
+            "user_comment": user_comment,
+            "result": ""})
+        code_suggestion = code_suggestion["result"]
         logger.info("LLM response", response=code_suggestion)
 
-        return code_suggestion.content
+        return code_suggestion
